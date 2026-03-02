@@ -183,6 +183,20 @@ p {
   scroll-margin-top: 100px;
 }
 
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 3.5rem 1.25rem;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
 /* Link Resets */
 a {
   color: inherit;

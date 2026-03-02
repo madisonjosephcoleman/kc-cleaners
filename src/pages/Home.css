@@ -309,6 +309,20 @@
 
 /* --- Responsive Layout Adjustments --- */
 @media (max-width: 1024px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 3rem;
+        min-height: auto;
+    }
+
+    .hero-image-wrapper {
+        height: 350px;
+    }
 
     .why-us-grid,
     .booking-container {
@@ -322,7 +336,66 @@
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 2.5rem;
+    }
+
+    .hero-title {
+        font-size: clamp(1.5rem, 7vw, 2.25rem);
+    }
+
+    .hero-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 1.75rem;
+    }
+
+    .hero-image-wrapper {
+        height: 260px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .why-us-visual {
+        height: 280px;
+    }
+
+    .why-us-grid {
+        gap: 2rem;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .booking-container {
+        padding: 1.5rem;
+        gap: 2rem;
+    }
+
+    .calendly-placeholder {
+        padding: 2rem 1.25rem;
+    }
+
+    .booking-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .visual-overlay h3 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
     .hero-actions {
         flex-direction: column;
     }
@@ -332,7 +405,11 @@
         width: 100%;
     }
 
+    .glass-card {
+        padding: 1.5rem;
+    }
+
     .visual-overlay h3 {
-        font-size: 2.5rem;
+        font-size: 1.75rem;
     }
 }

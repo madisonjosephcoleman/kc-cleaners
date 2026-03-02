@@ -1,7 +1,12 @@
+import { useState } from 'react';
 import './Navbar.css';
 import Button from './Button';
 
 const Navbar = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const closeMenu = () => setMenuOpen(false);
+
     return (
         <nav className="navbar">
             <div className="container nav-container">
@@ -10,10 +15,21 @@ const Navbar = () => {
                         <img src="/images/brand-logo-dark.svg" alt="KC Cleaners Logo" className="nav-main-logo" />
                     </a>
                 </div>
-                <div className="nav-links">
-                    <a href="#services" className="nav-link">Services</a>
-                    <a href="#why-us" className="nav-link">Why Us</a>
-                    <Button href="#booking" variant="primary" className="nav-cta">
+
+                <button
+                    className={`nav-hamburger ${menuOpen ? 'open' : ''}`}
+                    onClick={() => setMenuOpen(!menuOpen)}
+                    aria-label="Toggle navigation menu"
+                >
+                    <span className="hamburger-line"></span>
+                    <span className="hamburger-line"></span>
+                    <span className="hamburger-line"></span>
+                </button>
+
+                <div className={`nav-links ${menuOpen ? 'nav-links--open' : ''}`}>
+                    <a href="#services" className="nav-link" onClick={closeMenu}>Services</a>
+                    <a href="#why-us" className="nav-link" onClick={closeMenu}>Why Us</a>
+                    <Button href="#booking" variant="primary" className="nav-cta" onClick={closeMenu}>
                         Get a Quote
                     </Button>
                 </div>

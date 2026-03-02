@@ -4,12 +4,14 @@ const Button = ({ children, variant = 'primary', href, onClick, className = '', 
   const baseClass = `custom-button button-${variant} ${className}`;
 
   if (href) {
+    const isMailto = href.startsWith('mailto:');
     return (
       <a 
         href={href} 
         className={baseClass} 
-        target={external ? "_blank" : "_self"} 
-        rel={external ? "noopener noreferrer" : ""}
+        onClick={onClick}
+        {...(!isMailto && { target: external ? "_blank" : "_self" })}
+        {...(external && { rel: "noopener noreferrer" })}
       >
         {children}
       </a>

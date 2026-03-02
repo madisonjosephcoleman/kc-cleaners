@@ -30,13 +30,13 @@
     box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
 }
 
-.btn-secondary {
+.button-secondary {
     background: transparent;
     color: var(--text-primary);
     border: 1px solid var(--text-secondary);
 }
 
-.btn-secondary:hover {
+.button-secondary:hover {
     background: var(--bg-tertiary);
     border-color: var(--text-primary);
 }
