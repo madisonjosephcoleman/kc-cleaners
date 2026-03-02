@@ -1,0 +1,338 @@
+/* --- Utilities Used Only on Home --- */
+.text-gradient {
+    background: var(--gradient-glow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.section-header {
+    max-width: 600px;
+    margin: 0 auto 4rem;
+}
+
+/* --- Hero Section --- */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 150px;
+    /* Offset for larger navbar */
+    padding-bottom: 80px;
+    overflow: hidden;
+}
+
+.hero-bg-accent {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 70vw;
+    height: 70vw;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
+    /* Lighter accent */
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-container {
+    position: relative;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: flex-start;
+    /* Aligns image parallel to top of text */
+}
+
+.hero-content {
+    max-width: 100%;
+}
+
+.hero-title {
+    font-size: clamp(1.75rem, 4.2vw, 3.15rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: clamp(0.675rem, 1.2vw, 0.9rem);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    color: var(--text-secondary);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero-brand {
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+.hero-badge {
+    height: 48px;
+    width: auto;
+    opacity: 0.9;
+    transition: transform var(--transition-fast);
+}
+
+.hero-badge:hover {
+    transform: scale(1.05);
+}
+
+.hero-image-wrapper {
+    width: 100%;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    height: 500px;
+    position: relative;
+}
+
+.hero-image-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.2) 0%, transparent 100%);
+    /* Lighter overlay */
+    pointer-events: none;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform var(--transition-smooth);
+}
+
+.hero-image-wrapper:hover .hero-image {
+    transform: scale(1.02);
+}
+
+.hero-locations {
+    font-size: 0.875rem;
+    color: rgba(148, 163, 184, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    display: inline-block;
+}
+
+/* --- Services Section --- */
+.services-section {
+    position: relative;
+    background: var(--bg-secondary);
+    /* Solid soft clean bg instead of gradient */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    background: rgba(0, 0, 0, 0.03);
+    /* Dark glass for light theme */
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* --- Why Us Section --- */
+.why-us-section {
+    background: var(--bg-secondary);
+}
+
+.why-us-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.lead {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 3rem;
+}
+
+.benefit-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.benefit-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--bg-primary);
+    /* Use bright primary */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* Dark border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.why-us-visual {
+    height: 600px;
+    position: relative;
+    perspective: 1000px;
+}
+
+.visual-card {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.9) 0%, var(--brand-accent) 100%);
+    /* Solid brand color for contrast */
+    border-radius: var(--border-radius-lg);
+    display: flex;
+    align-items: flex-end;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+}
+
+.visual-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80') center/cover;
+    opacity: 0.4;
+    mix-blend-mode: luminosity;
+    transition: opacity var(--transition-smooth);
+}
+
+.visual-card:hover::before {
+    opacity: 0.6;
+}
+
+.visual-overlay {
+    position: relative;
+    z-index: 2;
+}
+
+.visual-overlay h3 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    color: white;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Booking Section --- */
+.booking-section {
+    background: var(--bg-primary);
+    /* Solid bright background */
+}
+
+.booking-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.booking-content h2 {
+    font-size: 2rem;
+    /* Matching the size of the calendly placeholder h3 */
+    margin-bottom: 1.5rem;
+}
+
+.contact-methods {
+    margin-top: 3rem;
+}
+
+
+
+.calendly-placeholder {
+    background: var(--bg-tertiary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius);
+    padding: 3rem 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.calendly-placeholder h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.calendly-placeholder p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* --- Responsive Layout Adjustments --- */
+@media (max-width: 1024px) {
+
+    .why-us-grid,
+    .booking-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .why-us-visual {
+        height: 400px;
+        order: -1;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-actions a,
+    .hero-actions button {
+        width: 100%;
+    }
+
+    .visual-overlay h3 {
+        font-size: 2.5rem;
+    }
+}
