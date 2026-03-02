@@ -75,7 +75,7 @@ const Home = () => {
                             Your long-term partner for janitorial services. We keep your facility spotless so you can focus on growth.
                         </p>
                         <div className="hero-actions delay-2">
-                            <Button href="#booking" variant="glow">
+                            <Button href="https://calendly.com/madison-kc-cleaners/30min" variant="glow" external>
                                 Book a Walkthrough
                             </Button>
                             <Button href="mailto:madison@kc-cleaners.com" variant="secondary">
@@ -178,6 +178,9 @@ const Home = () => {
                         <p>Schedule a no-obligation walkthrough and get a free quote for your commercial space today.</p>
 
                         <div className="contact-methods">
+                            <Button href="tel:9137422536" variant="secondary">
+                                Call Us
+                            </Button>
                             <Button href="mailto:madison@kc-cleaners.com" variant="secondary">
                                 Email Us
                             </Button>
@@ -188,10 +191,7 @@ const Home = () => {
                         {/* Calendly Inline Widget Embed */}
                         <div className="glass-panel calendly-placeholder reveal" style={{ transitionDelay: '0.1s' }}>
                             <h3>Book a Consultation</h3>
-                            <Button href="#" variant="primary" onClick={(e) => {
-                                e.preventDefault();
-                                alert('Calendly widget would open here');
-                            }}>
+                            <Button href="https://calendly.com/madison-kc-cleaners/30min" variant="primary" external>
                                 Book a Quote
                             </Button>
                             <p>Find a time that works for you</p>

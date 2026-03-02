@@ -29,7 +29,7 @@ const Navbar = () => {
                 <div className={`nav-links ${menuOpen ? 'nav-links--open' : ''}`}>
                     <a href="#services" className="nav-link" onClick={closeMenu}>Services</a>
                     <a href="#why-us" className="nav-link" onClick={closeMenu}>Why Us</a>
-                    <Button href="#booking" variant="primary" className="nav-cta" onClick={closeMenu}>
+                    <Button href="https://calendly.com/madison-kc-cleaners/30min" variant="primary" className="nav-cta" external onClick={closeMenu}>
                         Get a Quote
                     </Button>
                 </div>
