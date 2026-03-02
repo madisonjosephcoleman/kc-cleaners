@@ -2,7 +2,7 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <footer className="footer">
+        <footer className="footer" aria-label="Site footer">
             <div className="container footer-grid">
                 <div className="footer-brand fade-in-up">
                     <a href="/" className="footer-logo-link">

@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Button from '../components/Button';
+import useScrollReveal from '../hooks/useScrollReveal';
 import './Home.css';
 
 const services = [
@@ -37,13 +38,33 @@ const services = [
     }
 ];
 
+const testimonials = [
+    {
+        quote: "KC Cleaners transformed our office. The consistency and attention to detail is something we've never experienced with previous cleaning services.",
+        name: "Sarah M.",
+        role: "Office Manager, Overland Park"
+    },
+    {
+        quote: "We switched to KC Cleaners six months ago and haven't looked back. Their team is professional, reliable, and genuinely cares about the quality of their work.",
+        name: "James R.",
+        role: "Facility Director, Lenexa"
+    },
+    {
+        quote: "What sets them apart is the communication. If there's ever an issue, they're on it before I even have to reach out. Truly a partner, not just a vendor.",
+        name: "Patricia L.",
+        role: "Property Manager, Kansas City"
+    }
+];
+
 const Home = () => {
+    const pageRef = useScrollReveal();
+
     return (
-        <div className="home-wrapper">
+        <div className="home-wrapper" ref={pageRef}>
             <Navbar />
 
             {/* Hero Section */}
-            <header className="hero">
+            <header id="main-content" className="hero">
                 <div className="hero-bg-accent"></div>
                 <div className="container hero-container">
                     <div className="hero-content fade-in-up">
@@ -57,7 +78,7 @@ const Home = () => {
                             <Button href="#booking" variant="glow">
                                 Book a Walkthrough
                             </Button>
-                            <Button href="mailto:info@kc-cleaners.com" variant="secondary">
+                            <Button href="mailto:madison@kc-cleaners.com" variant="secondary">
                                 Email Us
                             </Button>
                         </div>
@@ -71,17 +92,39 @@ const Home = () => {
             {/* Services Section */}
             <section id="services" className="section services-section">
                 <div className="container">
-                    <div className="section-header text-center fade-in-up">
+                    <div className="section-header text-center reveal">
                         <h2>Our Services</h2>
                         <p>Comprehensive cleaning solutions tailored for professional environments.</p>
                     </div>
 
                     <div className="services-grid">
                         {services.map((service, index) => (
-                            <div key={index} className="glass-card service-card fade-in-up" style={{ animationDelay: `${index * 0.1}s` }}>
+                            <div key={index} className="glass-card service-card reveal" style={{ transitionDelay: `${index * 0.08}s` }}>
                                 <h3>{service.title}</h3>
                                 <p>{service.description}</p>
                             </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Testimonials Section */}
+            <section id="testimonials" className="section testimonials-section">
+                <div className="container">
+                    <div className="section-header text-center reveal">
+                        <h2>What Our Clients Say</h2>
+                        <p>Trusted by businesses across the Kansas City Metro.</p>
+                    </div>
+
+                    <div className="testimonials-grid">
+                        {testimonials.map((testimonial, index) => (
+                            <blockquote key={index} className="glass-card testimonial-card reveal" style={{ transitionDelay: `${index * 0.1}s` }}>
+                                <p className="testimonial-quote">&ldquo;{testimonial.quote}&rdquo;</p>
+                                <footer className="testimonial-author">
+                                    <cite className="testimonial-name">{testimonial.name}</cite>
+                                    <span className="testimonial-role">{testimonial.role}</span>
+                                </footer>
+                            </blockquote>
                         ))}
                     </div>
                 </div>
@@ -91,7 +134,7 @@ const Home = () => {
             <section id="why-us" className="section why-us-section">
                 <div className="container">
                     <div className="why-us-grid">
-                        <div className="why-us-content fade-in-up">
+                        <div className="why-us-content reveal">
                             <h2>What Sets Us Apart</h2>
                             <p className="lead">We don't just empty trash cans. We provide a tailored, highly-communicative cleaning partnership designed specifically for modern Kansas professional spaces.</p>
 
@@ -116,7 +159,7 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="why-us-visual fade-in-up delay-2">
+                        <div className="why-us-visual reveal" style={{ transitionDelay: '0.15s' }}>
                             <div className="glass-panel visual-card">
                                 <div className="visual-overlay">
                                     <h3>Consistent.<br />Clean.<br />Comfortable.</h3>
@@ -129,13 +172,13 @@ const Home = () => {
 
             {/* Booking / CTA Section */}
             <section id="booking" className="section booking-section">
-                <div className="container booking-container glass-card fade-in-up">
+                <div className="container booking-container glass-card reveal">
                     <div className="booking-content">
                         <h2>Ready for a spotless office?</h2>
                         <p>Schedule a no-obligation walkthrough and get a free quote for your commercial space today.</p>
 
                         <div className="contact-methods">
-                            <Button href="mailto:info@kc-cleaners.com" variant="secondary">
+                            <Button href="mailto:madison@kc-cleaners.com" variant="secondary">
                                 Email Us
                             </Button>
                         </div>
@@ -143,7 +186,7 @@ const Home = () => {
 
                     <div className="booking-widget">
                         {/* Calendly Inline Widget Embed */}
-                        <div className="glass-panel calendly-placeholder fade-in-up delay-1">
+                        <div className="glass-panel calendly-placeholder reveal" style={{ transitionDelay: '0.1s' }}>
                             <h3>Book a Consultation</h3>
                             <Button href="#" variant="primary" onClick={(e) => {
                                 e.preventDefault();

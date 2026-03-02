@@ -8,7 +8,7 @@ const Navbar = () => {
     const closeMenu = () => setMenuOpen(false);
 
     return (
-        <nav className="navbar">
+        <nav className="navbar" aria-label="Main navigation">
             <div className="container nav-container">
                 <div className="nav-brand">
                     <a href="/" className="nav-logo-link">
