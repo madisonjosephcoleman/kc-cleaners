@@ -310,6 +310,57 @@
     margin: 0;
 }
 
+/* --- Service Area Section --- */
+.service-area-section {
+    background: var(--bg-secondary);
+}
+
+.service-area-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.area-column h4 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    margin-bottom: 1rem;
+    letter-spacing: 0.02em;
+}
+
+.area-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.area-column li {
+    padding: 0.4rem 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.area-column li:last-child {
+    border-bottom: none;
+}
+
+.service-area-note {
+    text-align: center;
+    margin-top: 2.5rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.service-area-note a {
+    color: var(--brand-primary);
+    font-weight: 600;
+}
+
 /* --- Scroll Reveal --- */
 .reveal {
     opacity: 0;
@@ -417,10 +468,13 @@
         height: 260px;
     }
 
-    .services-grid,
-    .testimonials-grid {
+    .services-grid {
         grid-template-columns: 1fr;
         gap: 1.25rem;
+    }
+
+    .service-area-grid {
+        gap: 2rem;
     }
 
     .section-header {

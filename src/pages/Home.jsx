@@ -38,24 +38,6 @@ const services = [
     }
 ];
 
-const testimonials = [
-    {
-        quote: "KC Cleaners transformed our office. The consistency and attention to detail is something we've never experienced with previous cleaning services.",
-        name: "Sarah M.",
-        role: "Office Manager, Overland Park"
-    },
-    {
-        quote: "We switched to KC Cleaners six months ago and haven't looked back. Their team is professional, reliable, and genuinely cares about the quality of their work.",
-        name: "James R.",
-        role: "Facility Director, Lenexa"
-    },
-    {
-        quote: "What sets them apart is the communication. If there's ever an issue, they're on it before I even have to reach out. Truly a partner, not just a vendor.",
-        name: "Patricia L.",
-        role: "Property Manager, Kansas City"
-    }
-];
-
 const Home = () => {
     const pageRef = useScrollReveal();
 
@@ -108,27 +90,6 @@ const Home = () => {
                 </div>
             </section>
 
-            {/* Testimonials Section */}
-            <section id="testimonials" className="section testimonials-section">
-                <div className="container">
-                    <div className="section-header text-center reveal">
-                        <h2>What Our Clients Say</h2>
-                        <p>Trusted by businesses across the Kansas City Metro.</p>
-                    </div>
-
-                    <div className="testimonials-grid">
-                        {testimonials.map((testimonial, index) => (
-                            <blockquote key={index} className="glass-card testimonial-card reveal" style={{ transitionDelay: `${index * 0.1}s` }}>
-                                <p className="testimonial-quote">&ldquo;{testimonial.quote}&rdquo;</p>
-                                <footer className="testimonial-author">
-                                    <cite className="testimonial-name">{testimonial.name}</cite>
-                                    <span className="testimonial-role">{testimonial.role}</span>
-                                </footer>
-                            </blockquote>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             {/* Why Us Section */}
             <section id="why-us" className="section why-us-section">
@@ -167,6 +128,46 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* Service Area Section */}
+            <section id="service-area" className="section service-area-section">
+                <div className="container">
+                    <div className="section-header text-center reveal">
+                        <h2>Serving the Kansas City Metro</h2>
+                        <p>We proudly provide commercial cleaning services across the greater KC area.</p>
+                    </div>
+
+                    <div className="service-area-grid reveal" style={{ transitionDelay: '0.1s' }}>
+                        <div className="area-column">
+                            <h4>Kansas</h4>
+                            <ul>
+                                <li>Kansas City, KS</li>
+                                <li>Overland Park</li>
+                                <li>Olathe</li>
+                                <li>Lenexa</li>
+                                <li>Shawnee</li>
+                                <li>Leawood</li>
+                                <li>Prairie Village</li>
+                                <li>Merriam</li>
+                                <li>Mission</li>
+                            </ul>
+                        </div>
+                        <div className="area-column">
+                            <h4>Missouri</h4>
+                            <ul>
+                                <li>Kansas City, MO</li>
+                                <li>Lee's Summit</li>
+                                <li>Independence</li>
+                                <li>Blue Springs</li>
+                                <li>Gladstone</li>
+                                <li>Liberty</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p className="service-area-note reveal" style={{ transitionDelay: '0.2s' }}>Don't see your city? <a href="mailto:madison@kc-cleaners.com">Reach out</a> — we may still be able to serve you.</p>
                 </div>
             </section>
 
